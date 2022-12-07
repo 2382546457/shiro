@@ -24,12 +24,12 @@ public class TestAuthentication {
         DefaultSecurityManager securityManager = new DefaultSecurityManager();
         // 从shiro配置文件中读取信息，放入realm
         Realm realm = new IniRealm("classpath:shiro.ini");
+
         // 给securityManager设置Realm
         securityManager.setRealm(realm);
 
-        SecurityUtils.setSecurityManager(securityManager);
         // 将安全管理器设置给安全工具类, 以后安全工具类就使用安全管理器中的信息.
-
+        SecurityUtils.setSecurityManager(securityManager);
 
 
         Subject subject = SecurityUtils.getSubject();
